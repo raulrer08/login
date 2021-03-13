@@ -12,6 +12,12 @@
           Home
         </router-link>
         <router-link
+          to="/signup"
+          class="btn btn-ghost btn-sm rounded-btn hover:text-content-100"
+        >
+          Sign up
+        </router-link>
+        <router-link
           v-if="!isAuthenticated"
           to="/login"
           class="btn btn-ghost btn-sm rounded-btn hover:text-content-100"
@@ -39,10 +45,10 @@
 
 <script setup>
 import { useRouter } from 'vue-router'
-import { isAuthenticated } from '../helpers/useAuth.js'
+import { isAuthenticated, signOut } from '../helpers/useAuth.js'
 const router = useRouter()
-const logout = () => {
-  isAuthenticated.value = false
+const logout = async () => {
+  await signOut()
   router.push('/')
 }
 </script>

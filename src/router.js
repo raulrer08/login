@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import Secret from './views/Secret.vue'
 import Login from './views/Login.vue'
 import NotFound from './views/NotFound.vue'
+import Signup from './views/Signup.vue'
 
 import { isAuthenticated } from './helpers/useAuth'
 
@@ -19,6 +20,7 @@ const routes = [
   },
   { path: '/login', component: Login },
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
+  {path: '/signup', component: Signup},
 ]
 
 export const router = createRouter({
